@@ -28,3 +28,18 @@ void cppclassheader::setoutputcontent(string *outputstring){
 string cppclassheader::getfiletype(){
     return "h";
 }
+
+//Begin Class Body
+cppclassbody::cppclassbody(string classname, string headerfile){
+    
+    this->classname = classname;
+    this->headerfile = headerfile;
+}
+
+void cppclassbody::setoutputcontent(string *outputstring){
+    *outputstring = "#include <iostream>\nusing namespace;\ninclude\"" + headerfile + "\"\n\n" + classname + "::" +  classname + "(){\n\n}";
+}
+
+string cppclassbody::getfiletype(){
+    return "cpp";
+}

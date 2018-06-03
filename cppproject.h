@@ -22,9 +22,12 @@ class cppclassheader: public project {
 
 };
 
-//class cppclass: public project {
-//    public:
-
-//    private:
-
-//};
+class cppclassbody: public project {
+    public:
+        cppclassbody(string classname, string headerfile);
+        string getfiletype();
+        void setoutputcontent(string *outputstring);
+    private:
+        string classname;
+        string headerfile;
+};

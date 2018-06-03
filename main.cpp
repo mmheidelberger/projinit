@@ -67,7 +67,11 @@ void select_handler(int selection){
             projbase = new cppfile;
             break;
         case 51:
-            //3
+            //3 CPP Class
+            {
+            string headerfile = get_additional_info("Enter the filename for the header");
+            projbase = new cppclassbody(filename, headerfile);
+            }
             break;
         case 52:
             //4
@@ -86,9 +90,9 @@ void select_handler(int selection){
             projbase->addinworkspace(filecontent,projbase->getfiletype(), filename);
             delete projbase;
             projbase = nullptr;
- 
     }
 }    
+
 void set_file(char (*file)[50]){
     printw("Enter object name (omitting extension and suffixes):\n");
     echo();
